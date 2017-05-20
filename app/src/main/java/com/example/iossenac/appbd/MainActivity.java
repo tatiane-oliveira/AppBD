@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase banco = openOrCreateDatabase("contatos.bd", MODE_PRIVATE, null);
         banco.execSQL(createTable);
 
+        banco.delete("contato", null, null);
+
         ContentValues valores = new ContentValues();
         valores.put("nome", "Fulano");
         valores.put("telefone", "33224414");
